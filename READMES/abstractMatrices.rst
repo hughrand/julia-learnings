@@ -10,10 +10,10 @@ you can get some very unexpected behaviour. For example:
     X = [1 2 3; 4 5 6; 7 8 9]
     add1(X)    #X is a Matrix,    so it works fine
     add2(X)    #X is a Matrix,    so it works fine
-    add1(X')   #X' is a Matrix,   so it breaks
+    add1(X')   #X' is an Adjoint, so it breaks
     add2(X')   #X' is an Adjoint, so it works fine
 
-You can see the relationships by the following commands
+You can see the relationship that allows add2 to work by the following commands:
 ::
     subtypes(AbstractMatrix)  #Adjoint is a subtype
     superType(Matrix)         #This leads to DenseArray
